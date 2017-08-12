@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE hibernate-mapping PUBLIC 
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+        <class name="xin.qiliuhai.domain.plantExpectedN" table="plantExpectedN">
+        <!--主键对应关系-->
+            <id name="Id" column="id">
+            	<!--主键生成策略  -->
+                <generator class="native"/>
+            </id>
+            <property name="H" column="H"/>
+            <property name="maxN" column="maxN"/>
+            <property name="minN" column="minN"/>
+             <property name="typeId" column="typeId"/>
+            <!-- <set name="linkman" inverse="true" >
+            	<key column="lkm_cust_id" />
+            	<one-to-many class="com.itcast.domain.Linkman" />
+            </set> -->
+        </class>
+  </hibernate-mapping>

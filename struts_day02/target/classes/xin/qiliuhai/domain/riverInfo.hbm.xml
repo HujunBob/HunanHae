@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE hibernate-mapping PUBLIC 
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+        <class name="xin.qiliuhai.domain.riverInfo" table="riverinfo">
+        <!--主键对应关系-->
+            <id name="riverId" column="riverid">
+            	<!--主键生成策略  -->
+                <generator class="native"/>
+            </id>
+            <property name="riverName" column="rivername"/>
+            <property name="controlArea" column="controlarea"/>
+            <!-- <set name="linkman" inverse="true" >
+            	<key column="lkm_cust_id" />
+            	<one-to-many class="com.itcast.domain.Linkman" />
+            </set> -->
+        </class>
+  </hibernate-mapping>
