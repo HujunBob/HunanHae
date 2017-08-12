@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--添加约束-->
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+ <hibernate-configuration>
+ 	<session-factory>
+ 		<!--五大参数-->
+ 			<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+            <property name="hibernate.connection.url">jdbc:mysql://rm-uf63dht8ci6vxa03lo.mysql.rds.aliyuncs.com/interbs_16</property>
+            <property name="hibernate.connection.username">root</property>
+            <property name="hibernate.connection.password">WWWqq2_09</property>
+            <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- 可选配置 -->
+		<!-- 显示SQL语句，在控制台显示 -->
+		<property name="hibernate.show_sql">false</property>
+		<!-- 格式化SQL语句 -->
+		<property name="hibernate.format_sql">true</property>
+		<!-- 生成数据库的表结构 update：如果没有表结构，创建表结构。如果存在，不会创建，添加数据 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<!-- 开启绑定本地的session -->
+		<property name="hibernate.current_session_context_class">thread</property>
+		<!--添加持久层-->
+		
+		<mapping resource="xin/qiliuhai/domain/riverInfo.hbm.xml" />
+		<mapping resource="xin/qiliuhai/domain/stationInfo.hbm.xml"/>
+		<mapping resource="xin/qiliuhai/domain/upZV.hbm.xml" />
+		<mapping resource="xin/qiliuhai/domain/userInfo.hbm.xml" />
+		<mapping resource="xin/qiliuhai/domain/userType.hbm.xml" />
+		<mapping resource="xin/qiliuhai/domain/upStation.hbm.xml" />
+		<mapping resource="xin/qiliuhai/domain/downRZ.hbm.xml" />
+		<mapping resource="xin/qiliuhai/domain/downStation.hbm.xml" />
+		<mapping resource="xin/qiliuhai/domain/plantExpectedN.hbm.xml" />
+		<mapping resource="xin/qiliuhai/domain/plantHQN.hbm.xml" />
+		<mapping resource="xin/qiliuhai/domain/plantInfo.hbm.xml" />
+ 	</session-factory>
+ </hibernate-configuration>       

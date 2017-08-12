@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+ <constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.devMode" value="false" />
+	
+	<package name="river" extends="json-default" namespace="/">
+		<action name="Json_River_*" class="xin.qiliuhai.action.riverQuery" method="{1}">
+			<result name="success" type="json">
+				 <param name="root">json</param>
+			</result>
+		</action>
+		<action name="Json_Station_*" class="xin.qiliuhai.action.stationQuery" method="{1}">
+			<result name="success" type="json">
+				 <param name="root">json</param>
+			</result>
+		</action>
+		
+	</package>
+	<package name="struts" extends="struts-default" namespace="/">
+		<action name="User_*" class="xin.qiliuhai.action.userQuery" method="{1}">
+			<result name="success" >./user{1}.jsp</result>
+		</action>
+		<action name="Station_*" class="xin.qiliuhai.action.stationQuery" method="{1}">
+			<result name="success" >./stationgetAll.jsp</result>
+		</action>
+		<action name="Test" class="xin.qiliuhai.action.TestAction" method="test">
+		</action>
+	</package> 
+	<package name="demo" extends="struts-default" namespace="/">
+		<action name="vs" class="xin.qiliuhai.Test.demo1" method="save">
+			<result name="success">./Test/demo1.jsp</result>
+		</action>
+		<action name="showAll" class="xin.qiliuhai.Test.demo1" method="showAll">
+			<result name="success" >./Test/demo1.jsp</result>
+		</action>
+	</package>
+	
+</struts>

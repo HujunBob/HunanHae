@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE hibernate-mapping PUBLIC 
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="xin.qiliuhai.domain.stationInfo" table="stationinfo">
+		<!--主键对应关系 -->
+		<id name="stationId" column="stationid">
+			<!--主键生成策略 -->
+			<generator class="native" />
+		</id>
+		<property name="activeV" column="activeV" />
+		<property name="adjustType" column="adjusttype" />
+		<property name="checkFloodZ" column="checkfloodz" />
+		<property name="deadV" column="deadv" />
+		<property name="deadZ" column="deadz   " />
+		<property name="designFloodZ" column="designfloodz" />
+		<property name="fittingCanUse" column="fittingCanUse" />
+		<property name="floodLimitZ" column="floodlimitz" />
+		<property name="floodMaxZ" column="floodmaxz" />
+		<property name="guaranteedN" column="guaranteedn" />
+		<property name="inUse" column="inuse" />
+		<property name="KValue" column="kvalue" />
+		<property name="LongCanUse" column="longcanuse" />
+		<property name="MiddleCanUse" column="middlecanuse" />
+		<property name="nariStationId" column="naristationid" />
+		<property name="normalZ" column="normalZ" />
+		<property name="plantsMaxQ" column="plantsmaxq" />
+		<property name="plantsNum" column="plantsnum" />
+		<property name="plantsTypeNum" column="plantsTypeNum" />
+		<property name="ratedN" column="ratedn" />
+		<property name="relativeX" column="relativex" />
+		<property name="relativeY" column="relativey" />
+		<property name="riverId" column="riverid" />
+		<property name="shortCanUse" column="shortcanuse" />
+		<property name="stationMaxR" column="stationmaxr" />
+		<property name="stationMinR" column="stationminr" />
+		<property name="stationName" column="StationName" />
+		<property name="totalV" column="totalv" />
+		<!-- <set name="linkman" inverse="true" > <key column="lkm_cust_id" /> 
+			<one-to-many class="com.itcast.domain.Linkman" /> </set> -->
+	</class>
+</hibernate-mapping>
