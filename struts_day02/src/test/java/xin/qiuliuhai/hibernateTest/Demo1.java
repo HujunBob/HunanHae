@@ -142,7 +142,6 @@ public class Demo1 {
 		Transaction tr = session.beginTransaction();
 		// 使用的是类名而不是表名
 		Query query = session.createQuery("from userInfo ");
-//		query.setParameter(0,140242L);
 		List<userInfo> list = query.list();
 		for (userInfo r : list) {
 			System.out.println(r);

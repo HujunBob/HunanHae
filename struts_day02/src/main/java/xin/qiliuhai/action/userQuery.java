@@ -32,6 +32,7 @@ public class userQuery extends ActionSupport{
 	public String getAll(){
 		List<userInfo> list=new userServiceImpl().getAll();
 		ValueStack vs = ActionContext.getContext().getValueStack();
+		System.out.println(list.get(0).getId());
 		vs.set("userInfo", list);
 		return SUCCESS;
 	}
