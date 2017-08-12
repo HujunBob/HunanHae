@@ -19,6 +19,11 @@
 				 <param name="root">json</param>
 			</result>
 		</action>
+		<action name="Json_userInfo_*" class="xin.qiliuhai.action.userInfoQuery" method="{1}">
+			<result name="success" type="json">
+				 <param name="root">json</param>
+			</result>
+		</action>
 		<action name="Test" class="xin.qiliuhai.action.TestAction" method="test">
 			<result name="success" type="json">
 				<param name="root">json</param>
@@ -26,7 +31,7 @@
 		</action>
 	</package>
 	<package name="struts" extends="struts-default" namespace="/">
-		<action name="User_*" class="xin.qiliuhai.action.userQuery" method="{1}">
+		<action name="User_*" class="xin.qiliuhai.action.userInfoQuery" method="{1}">
 			<result name="success" >./user{1}.jsp</result>
 		</action>
 		<action name="Station_*" class="xin.qiliuhai.action.stationQuery" method="{1}">

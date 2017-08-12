@@ -23,21 +23,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  		 $(function(){
 			$("input").click(function(obj){
  					var $obj=$(this);
- 					var $table=$("table").get(0).rows[$obj.attr("alt")];
- 					var json={
- 						
- 						"Id":$obj.attr("name"),
- 						"userName":$table.cells[0].innerHTML,
- 						"passWord":$table.cells[1].innerHTML,
- 						"realName":$table.cells[2].innerHTML,
- 						"userTypeId":$table.cells[3].innerHTML,
- 						"phoneNum":$table.cells[4].innerHTML,
- 						"office":$table.cells[5].innerHTML
- 					};
- 					$.post("./Test.action",json,function(data){
- 						
- 					},"json");
- 				});
+ 					if($obj.prop("value")=="修改"){
+ 						var $table=$("table").get(0).rows[$obj.attr("alt")];
+ 						var json={
+ 							"Id":$obj.attr("name"),
+ 							"userName":$table.cells[0].innerHTML,
+ 							"passWord":$table.cells[1].innerHTML,
+ 							"realName":$table.cells[2].innerHTML,
+ 							"userTypeId":$table.cells[3].innerHTML,
+ 							"phoneNum":$table.cells[4].innerHTML,
+ 							"office":$table.cells[5].innerHTML
+ 							};
+ 						$.post("./Json_userInfo_edit.action",json,function(data){
+
+ 							},"json");
+ 					}
+ 					if($obj.prop("value")=="删除"){
+ 						var json={
+ 								"Id":$obj.attr("name")
+ 							}
+ 						$.post("./Json_userInfo_delete.action",json,function(data){
+
+ 							},"json");
+ 					}
+ 				});	
  		});
  		
  	</script>
@@ -62,7 +71,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<td contentEditable="true">${p.phoneNum }</td>
 					<td contentEditable="true">${p.office }</td>
 					<td><input type="button" value="修改"  alt="${count.index+1}" name="${p.id}"/></td>
-					<td><input type="button" value="删除"  alt="${count.index+1}" /></td>
+					<td><input type="button" value="删除"  alt="${count.index+1}" name="${p.id}"/></td>
 				</tr>
 			</c:forEach>
 		</table>
